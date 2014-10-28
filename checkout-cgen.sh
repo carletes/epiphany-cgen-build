@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cgen_repo="https://github.com/adapteva/epiphany-cgen.git"
+cgen_repo="https://github.com/carletes/epiphany-cgen.git"
 cgen_dir="/vagrant/epiphany-cgen"
 
 if [ ! -d $cgen_dir ] ; then
@@ -14,4 +14,6 @@ chown -R vagrant: $cgen_dir
   make &&
   cd cgen &&
   make desc ARCH=epiphany &&
-  make html ARCH=epiphany)
+  make html ARCH=epiphany &&
+  cd doc &&
+  make html)
